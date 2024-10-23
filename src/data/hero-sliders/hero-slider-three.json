@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "backgroundImage": "/img/home/hero-slider-one.jpg",
+    "subtitle": "New Trending",
+    "title": "THE ART OF BATHROOM ELEGANCE.",
+    "text": "Exclusive bathroom furniture collection is meticulously crafted from a seamless blend of solid surface and wood materials.",
+    "url": "/shop/countertops"
+  },
+  {
+    "id": "2",
+    "backgroundImage": "/img/home/hero-slider-two.jpg",
+    "subtitle": "New Trending",
+    "title": "THE ART OF BATHROOM ELEGANCE.",
+    "text": "Exclusive bathroom furniture collection is meticulously crafted from a seamless blend of solid surface and wood materials.",
+    "url": "/shop/countertops"
+  },
+  {
+    "id": "3",
+    "backgroundImage": "/img/home/hero-slider-three.jpg",
+    "subtitle": "New Trending",
+    "title": "THE ART OF BATHROOM ELEGANCE.",
+    "text": "Exclusive bathroom furniture collection is meticulously crafted from a seamless blend of solid surface and wood materials.",
+    "url": "/shop/countertops"
+  }
+]

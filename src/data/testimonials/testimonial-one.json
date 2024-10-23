@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "name": "Sophia T",
+    "designation": "",
+    "image": "https://randomuser.me/api/portraits/women/8.jpg",
+    "content": "I couldn’t be happier with my new quartz countertop. The craftsmanship is excellent, and it adds a sleek, modern look to my bathroom. It's also incredibly durable, making it perfect for everyday use. Highly recommend if you're looking for a blend of style and functionality!"
+  },
+  {
+    "id": "2",
+    "name": "Michael S",
+    "designation": "",
+    "image": "https://randomuser.me/api/portraits/men/7.jpg",
+    "content": "The custom storage solutions in my vanity have been a game-changer. The drawers are spacious, and I can easily organize all my toiletries. The soft-close feature is an added bonus! It's both practical and beautiful, giving my bathroom a clutter-free look."
+  },
+  {
+    "id": "3",
+    "name": "Emily W",
+    "designation": "",
+    "image": "https://randomuser.me/api/portraits/women/75.jpg",
+    "content": "The ceramic washbasin is the perfect combination of style and function. It has a modern design that fits perfectly with my vanity, and it’s also very easy to clean. The quality is exceptional, and I’ve received so many compliments!."
+  },
+  {
+    "id": "4",
+    "name": "James P.",
+    "designation": "",
+    "image": "https://randomuser.me/api/portraits/men/5.jpg",
+    "content": "The built-in storage options are not only aesthetically pleasing but also incredibly functional. I love how much space it offers without looking bulky. The materials feel high-end, and it’s made my bathroom so much more organized!."
+  }
+]

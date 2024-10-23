@@ -1,0 +1,208 @@
+.bottom-wizard-container {
+  padding: 1rem 1rem;
+  background: #000;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+.bottom-wizard {
+  display: grid;
+  grid-template-areas:
+    "total qty"
+    "submit submit";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+}
+
+.wizard-total {
+  grid-area: total;
+  justify-self: flex-start;
+}
+
+.qty {
+  grid-area: qty;
+  justify-self: flex-end;
+}
+
+.wizard-submit {
+  grid-area: submit;
+  justify-self: center;
+}
+
+.wizard-total p {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.wizard-total br {
+  display: block;
+}
+
+.wizard-total-price {
+  color: rgb(135, 135, 135);
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.qty-number {
+  color: rgb(85, 85, 85);
+  margin-bottom: 0px;
+  font-size: 1.2rem;
+}
+.qty-update {
+  border: none;
+  background-color: white;
+  color: black;
+  padding: 0.5rem;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.wizard-submit {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.wizard-submit button {
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+  padding: 0.4rem;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  transition: 0.25s ease-in-out;
+  width: 100%;
+}
+
+.wizard-submit button p {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.wizard-submit button:hover {
+  background-color: black;
+  color: white;
+}
+
+.wizard-submit button p {
+  /* display: none; */
+}
+
+/*  */
+.product-content__price.vanity {
+  height: fit-content;
+}
+.price.vanity {
+  font-size: 1rem;
+}
+
+.price-bottom-container {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: white;
+  padding: 1rem 1rem;
+}
+
+.btn-addtocart.vanity {
+  padding: 10px 20px;
+}
+
+.product-content__quantity.vanity .cart-plus-minus button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 568px) {
+  .btn-addtocart.vanity {
+    padding: 12px 35px;
+  }
+
+  .product-content__quantity.vanity .cart-plus-minus button {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (min-width: 768px) {
+  .bottom-wizard {
+    grid-template-areas: "total qty submit";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+  }
+
+  .qty {
+    justify-self: flex-start;
+  }
+
+  .wizard-submit {
+    margin-top: 0;
+  }
+  .wizard-total br {
+    display: none;
+  }
+  .qty-number {
+    color: rgb(85, 85, 85);
+    padding: 0 1rem;
+    font-size: 1.2rem;
+  }
+
+  .wizard-submit button {
+    padding: 0.5rem 1.4rem;
+    font-size: 1.2rem;
+  }
+
+  .wizard-submit button p {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .price.vanity {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 992px) {
+  .price-bottom-container {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: white;
+    padding: 1rem 1rem;
+  }
+
+  .price.vanity {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .price.vanity {
+    font-size: 18px;
+  }
+}

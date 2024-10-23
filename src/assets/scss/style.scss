@@ -1,0 +1,185 @@
+/* Gotham Extra Light */
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-XLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-XLightItalic.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* Gotham Thin */
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Thin.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-ThinItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Gotham Light */
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Light.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-LightItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Gotham Book */
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Book.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-BookItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Gotham Medium */
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Medium.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-MediumItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Gotham Bold */
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Gotham Black */
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Black.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-BlackItalic.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* Gotham Ultra */
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Ultra.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-UltraItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "GE Thameen Book";
+  src: url("/fonts/ge-thameen-book/GE Thameen Book.ttf") format("truetype");
+
+  font-style: normal;
+}
+
+:root {
+  --ff-roboto: "Gotham", sans-serif; // Gotham is used here
+  --ff-poppins: "Gotham", sans-serif;
+}
+
+/* third party styles */
+@import "~simple-line-icons/scss/simple-line-icons.scss";
+@import "../css/flaticon.css";
+
+/* project styles */
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+@import "base/reset";
+
+@import "components/button";
+@import "components/newsletter";
+@import "components/icon-box";
+@import "components/testimonial";
+@import "components/banner";
+@import "components/hero-slider";
+@import "components/section-title";
+@import "components/product-thumb";
+@import "components/product-slider";
+@import "components/product-modal";
+@import "components/product-tab";
+@import "components/breadcrumb";
+@import "components/product-image-gallery";
+@import "components/product-description";
+@import "components/empty-area";
+@import "components/team";
+@import "components/pagination";
+@import "components/brand-logo";
+@import "components/countdown";
+@import "components/image-slider";
+@import "components/category";
+
+@import "layouts/footer";
+@import "layouts/grid";
+@import "layouts/header";
+@import "layouts/sidebar";
+
+@import "pages/cart";
+@import "pages/compare";
+@import "pages/checkout";
+@import "pages/order-complete";
+@import "pages/my-account";
+@import "pages/login-register";
+@import "pages/terms";
+@import "pages/not-found";
+@import "pages/faq";
+@import "pages/contact";
+@import "pages/blog";
+@import "pages/shop";

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "backgroundImage": "/assets/images/hero-slider/one/1.png",
+    "subtitle": "Exclusive bathroom furniture collection is meticulously crafted from a seamless blend of solid surface and wood materials.",
+    "title": "THE ART OF BATHROOMS ELEGANCE",
+    "url": "/shop/countertops"
+  },
+  {
+    "id": "2",
+    "backgroundImage": "/assets/images/hero-slider/one/2.png",
+    "subtitle": "",
+    "title": "Storages",
+    "url": "/shop/countertops"
+  },
+  {
+    "id": "3",
+    "backgroundImage": "/assets/images/hero-slider/one/3.png",
+    "subtitle": "",
+    "title": "Washbasin",
+    "url": "/shop/countertops"
+  }
+]

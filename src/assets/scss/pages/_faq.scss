@@ -1,0 +1,105 @@
+
+/*=============================================
+=            faq            =
+=============================================*/
+
+.faq-accordion {
+  --bs-accordion-border-radius: 0;
+  --bs-accordion-inner-border-radius: 0;
+  --bs-accordion-color: var(--heading-color);
+  --bs-accordion-btn-color: var(--heading-color);
+  --bs-accordion-border-width: 0;
+  --bs-accordion-btn-padding-x: 0;
+  --bs-accordion-btn-padding-y: 0;
+  --bs-accordion-body-padding-y: 1.25rem;
+  --bs-accordion-btn-icon: none;
+  --bs-accordion-btn-active-icon: none;
+
+  --bs-accordion-btn-focus-border-color: transparent;
+  --bs-accordion-btn-focus-box-shadow: none;
+
+  --bs-accordion-active-color: var(--heading-color);
+  --bs-accordion-active-bg: transparent;
+
+  .accordion{
+    &-item {
+      &:not(:last-child){
+        margin-bottom: 20px;
+      }
+    }
+    &-header {
+      border-bottom: 1px solid rgba(0,0,0,.125);
+    }
+    &-button {
+      font-weight: 600;
+      padding-bottom: 15px;
+      padding-right: 40px;
+      position: relative;
+      svg {
+        position: absolute;
+        top: 5px;
+        right: 0;
+      }
+      &:hover {
+        color: var(--primary);
+      }
+    }
+    &-body {
+      padding-left: 0;
+    }
+  }
+}
+
+.single-faq {
+  margin-bottom: 20px;
+
+  border: 0;
+  border-radius: 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .card-header {
+    margin-bottom: 0 !important;
+    padding: 0;
+
+    background-color: transparent;
+    button {
+      width: 100%;
+      padding: 0 40px 15px 0;
+
+      text-align: left;
+
+      border: none;
+      background: none;
+      h3 {
+        font-size: 16px;
+        font-weight: 600;
+
+        position: relative;
+
+        margin-bottom: 0;
+
+        transition: $transition--default;
+        svg {
+          position: absolute;
+          top: 50%;
+          right: -30px;
+
+          transform: translateY(-50%);
+        }
+      }
+      &:hover {
+        h3 {
+          color: $theme-color--default;
+        }
+      }
+    }
+  }
+
+  .card-body {
+    padding-left: 0;
+  }
+}
+
+/*=====  End of faq  ======*/
+
