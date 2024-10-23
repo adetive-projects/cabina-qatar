@@ -71,6 +71,7 @@ const ProductThumbLeft = ({ product }) => {
         ? allSingleProductData.arabic_countertops
         : allSingleProductData.english_countertops
     );
+    setIsLoading(false);
   }, [currentLanguage, allSingleProductData]);
 
   // const relatedProducts = getProducts(
