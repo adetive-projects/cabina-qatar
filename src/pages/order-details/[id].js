@@ -212,55 +212,55 @@ const OrderDetails = () => {
 
 export default OrderDetails;
 
-export async function getStaticPaths() {
-  try {
-    const res = await fetch(`${apiUrl}/orders/9`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer 79|7q2o0sdxc0yQBNkpjluHTgMe5iOhZ0Db2QHptujN15be7f68`,
-      },
-    });
-    const orders = await res.json();
-    const paths = orders?.data?.english_orders?.map((product) => ({
-      params: { id: product?.id?.toString() || "" },
-    }));
+// export async function getStaticPaths() {
+//   try {
+//     const res = await fetch(`${apiUrl}/orders/9`, {
+//       method: "GET",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer 79|7q2o0sdxc0yQBNkpjluHTgMe5iOhZ0Db2QHptujN15be7f68`,
+//       },
+//     });
+//     const orders = await res.json();
+//     const paths = orders?.data?.english_orders?.map((product) => ({
+//       params: { id: product?.id?.toString() || "" },
+//     }));
 
-    return {
-      paths,
-      fallback: false,
-    };
-  } catch (error) {
-    console.error("Error:", error.message);
-    return {
-      paths: [],
-      fallback: false,
-    };
-  }
-}
+//     return {
+//       paths,
+//       fallback: false,
+//     };
+//   } catch (error) {
+//     console.error("Error:", error.message);
+//     return {
+//       paths: [],
+//       fallback: false,
+//     };
+//   }
+// }
 
-export async function getStaticProps({ params }) {
-  try {
-    const res = await fetch(`${apiUrl}/orders/9`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer 79|7q2o0sdxc0yQBNkpjluHTgMe5iOhZ0Db2QHptujN15be7f68`,
-      },
-    });
-    const orders = await res.json();
+// export async function getStaticProps({ params }) {
+//   try {
+//     const res = await fetch(`${apiUrl}/orders/9`, {
+//       method: "GET",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer 79|7q2o0sdxc0yQBNkpjluHTgMe5iOhZ0Db2QHptujN15be7f68`,
+//       },
+//     });
+//     const orders = await res.json();
 
-    const product = orders?.data?.english_orders?.find(
-      ({ id: orderId }) => orderId === Number(params.id)
-    );
+//     const product = orders?.data?.english_orders?.find(
+//       ({ id: orderId }) => orderId === Number(params.id)
+//     );
 
-    return {
-      props: { product },
-    };
-  } catch (error) {
-    console.log(error);
-    return {
-      props: {},
-    };
-  }
-}
+//     return {
+//       props: { product },
+//     };
+//   } catch (error) {
+//     console.log(error);
+//     return {
+//       props: {},
+//     };
+//   }
+// }

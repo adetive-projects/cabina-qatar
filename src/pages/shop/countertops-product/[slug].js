@@ -61,9 +61,9 @@ const ProductThumbLeft = ({ product }) => {
     }
   };
 
-  useEffect(() => {
-    getSingleProduct();
-  }, [slug]);
+  // useEffect(() => {
+  //   getSingleProduct();
+  // }, [slug]);
 
   useEffect(() => {
     setSingleProduct(
