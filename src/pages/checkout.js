@@ -30,7 +30,7 @@ const Checkout = () => {
     customer_email: user && user.email ? user.email : "",
     customer_address: user && user.address ? user.address : "",
     additional_request: "",
-    payment_method: "credit_card",
+    payment_method: "online_payment",
   });
 
   const dispatch = useDispatch();
@@ -89,10 +89,7 @@ const Checkout = () => {
         const data = await response.json();
 
         if (data.success) {
-          if (
-            customerDetails.payment_method === "credit_card" ||
-            customerDetails.payment_method === "debit_card"
-          ) {
+          if (customerDetails.payment_method === "online_payment") {
             window.location.href = data.route;
           } else if (customerDetails.payment_method === "cod") {
             cogoToast.success("Order Placed Successfully", {
@@ -433,16 +430,16 @@ const Checkout = () => {
                           required
                           type="radio"
                           name="payment_method"
-                          id="credit_card"
-                          defaultValue="credit_card"
+                          id="online_payment"
+                          defaultValue="online_payment"
                           onChange={handleCustomerDetailsChange}
                           defaultChecked={
-                            customerDetails.payment_method === "credit_card"
+                            customerDetails.payment_method === "online_payment"
                           }
                         />
                         <label
                           className="form-check-label"
-                          htmlFor="credit_card"
+                          htmlFor="online_payment"
                         >
                           {t("checkout.payment.credit-card")}
                         </label>
@@ -451,7 +448,7 @@ const Checkout = () => {
                           available, but the majority have suffered alteration.{" "}
                         </p> */}
                       </div>
-                      <div className="custom-radio space-mb--20">
+                      {/* <div className="custom-radio space-mb--20">
                         <input
                           className="form-check-input"
                           type="radio"
@@ -469,11 +466,11 @@ const Checkout = () => {
                         >
                           {t("checkout.payment.debit-card")}
                         </label>
-                        {/* <p data-method="option4" className="payment-text">
+                        <p data-method="option4" className="payment-text">
                           Please send your cheque to Store Name, Store Street,
                           Store Town, Store State / County, Store Postcode.
-                        </p> */}
-                      </div>
+                        </p> 
+                      </div> */}
                       <div className="custom-radio space-mb--20">
                         <input
                           className="form-check-input"

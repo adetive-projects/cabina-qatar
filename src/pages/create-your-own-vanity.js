@@ -268,9 +268,9 @@ function VanityCustomizer() {
       ...prevStorageData,
       selectedStorage: storage,
       selectedStorageColor: "",
-      // selectedStorageColor: validArticleNos.includes(storage?.article_no)
-      //   ? counterTopData?.selectedCTColor
-      //   : "",
+      selectedStorageColor: validArticleNos.includes(storage?.article_no)
+        ? counterTopData?.selectedCTColor
+        : prevStorageData?.oldSelectedStorageColor,
     }));
 
     setPriceData((prevPriceData) => ({
@@ -278,6 +278,8 @@ function VanityCustomizer() {
       storagePrice: storage.storage_price ? storage.storage_price : 0,
     }));
   };
+
+  // console.log(storageData);
 
   const handleCounterTopColorSelection = (color) => {
     setCounterTopData((prevCounterTopData) => ({
@@ -536,7 +538,13 @@ function VanityCustomizer() {
                                     setStorageData({
                                       ...storageData,
                                       selectedStorageColor: color,
-                                      // oldSelectedStorageColor : validArticleNos.includes(storageData?.selectedStorage?.article_no)
+                                      oldSelectedStorageColor:
+                                        validArticleNos.includes(
+                                          storageData?.selectedStorage
+                                            ?.article_no
+                                        )
+                                          ? storageData?.selectedStorageColor
+                                          : color,
                                     })
                                   }
                                 >

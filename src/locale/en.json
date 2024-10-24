@@ -158,7 +158,7 @@
   "checkout.order.storage-color": "Storage Color:",
   "checkout.order.total": "Total",
   "checkout.payment.title": "Payment",
-  "checkout.payment.credit-card": "Credit Card",
+  "checkout.payment.credit-card": "Online payemnt",
   "checkout.payment.debit-card": "Debit Card",
   "checkout.payment.cash-payment": "Cash Payment",
   "checkout.payment.place-order": "Place Order",
