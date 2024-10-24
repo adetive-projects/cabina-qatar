@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "server": "pm2 start npm -- start"
   },
   "dependencies": {
     "@hasanm95/cogo-toast": "https://github.com/hasanm95/cogo-toast",
@@ -21,6 +22,7 @@
     "i18next": "^23.16.0",
     "next": "^13.0.7",
     "next-redux-wrapper": "^8.0.0",
+    "pm2": "^5.4.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
