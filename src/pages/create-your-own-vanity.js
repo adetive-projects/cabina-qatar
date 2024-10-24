@@ -41,6 +41,7 @@ function VanityCustomizer() {
     storages: [],
     selectedStorageColor: null,
     selectedStorage: "",
+    oldSelectedStorageColor: null,
   });
 
   const [colorsData, setColorsData] = useState({
@@ -267,6 +268,9 @@ function VanityCustomizer() {
       ...prevStorageData,
       selectedStorage: storage,
       selectedStorageColor: "",
+      // selectedStorageColor: validArticleNos.includes(storage?.article_no)
+      //   ? counterTopData?.selectedCTColor
+      //   : "",
     }));
 
     setPriceData((prevPriceData) => ({
@@ -299,6 +303,15 @@ function VanityCustomizer() {
       }));
     }
   }, [storageData.selectedStorage]);
+
+  // useEffect(() => {
+  //   if (!validArticleNos.includes(storageData?.selectedStorage?.article_no)) {
+  //     setStorageData((prevStorageData) => ({
+  //       ...prevStorageData,
+  //       selectedStorageColor: prevStorageData?.selectedStorageColor,
+  //     }));
+  //   }
+  // }, [storageData.selectedStorage]);
 
   return (
     <LayoutOne showFooter={false}>
@@ -523,6 +536,7 @@ function VanityCustomizer() {
                                     setStorageData({
                                       ...storageData,
                                       selectedStorageColor: color,
+                                      // oldSelectedStorageColor : validArticleNos.includes(storageData?.selectedStorage?.article_no)
                                     })
                                   }
                                 >

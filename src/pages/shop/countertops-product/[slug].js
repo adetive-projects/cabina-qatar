@@ -26,7 +26,7 @@ const ProductThumbLeft = ({ product }) => {
   const router = useRouter();
   const { slug } = router.query;
   const [singleProduct, setSingleProduct] = useState({});
-  const [allSingleProductData, setAllSingleProductData] = useState(product);
+  const [allSingleProductData, setAllSingleProductData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -61,9 +61,9 @@ const ProductThumbLeft = ({ product }) => {
     }
   };
 
-  // useEffect(() => {
-  //   getSingleProduct();
-  // }, [slug]);
+  useEffect(() => {
+    getSingleProduct();
+  }, [slug]);
 
   useEffect(() => {
     setSingleProduct(
@@ -71,7 +71,6 @@ const ProductThumbLeft = ({ product }) => {
         ? allSingleProductData.arabic_countertops
         : allSingleProductData.english_countertops
     );
-    setIsLoading(false);
   }, [currentLanguage, allSingleProductData]);
 
   // const relatedProducts = getProducts(
@@ -160,55 +159,55 @@ const ProductThumbLeft = ({ product }) => {
 
 export default ProductThumbLeft;
 
-export async function getStaticPaths() {
-  try {
-    const res = await fetch(`${apiUrl}/countertops`);
-    const products = await res.json();
-    const englishCountertops = products?.data?.english_countertops || [];
-    const paths = englishCountertops.map((product) => ({
-      params: { slug: product?.id?.toString() },
-    }));
+// export async function getStaticPaths() {
+//   try {
+//     const res = await fetch(`${apiUrl}/countertops`);
+//     const products = await res.json();
+//     const englishCountertops = products?.data?.english_countertops || [];
+//     const paths = englishCountertops.map((product) => ({
+//       params: { slug: product?.id?.toString() },
+//     }));
 
-    return {
-      paths,
-      fallback: false,
-    };
-  } catch (error) {
-    console.error("Error:", error.message);
-    return {
-      paths: [],
-      fallback: false,
-    };
-  }
-}
+//     return {
+//       paths,
+//       fallback: false,
+//     };
+//   } catch (error) {
+//     console.error("Error:", error.message);
+//     return {
+//       paths: [],
+//       fallback: false,
+//     };
+//   }
+// }
 
-export async function getStaticProps({ params }) {
-  try {
-    const res = await fetch(`${apiUrl}/single-countertop`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: params.slug,
-      }),
-    });
+// export async function getStaticProps({ params }) {
+//   try {
+//     const res = await fetch(`${apiUrl}/single-countertop`, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({
+//         id: params.slug,
+//       }),
+//     });
 
-    const productData = await res.json();
+//     const productData = await res.json();
 
-    if (!productData || !productData.data) {
-      return { notFound: true };
-    }
+//     if (!productData || !productData.data) {
+//       return { notFound: true };
+//     }
 
-    const product = productData.data;
+//     const product = productData.data;
 
-    return {
-      props: { product },
-    };
-  } catch (error) {
-    console.log(error);
-    return {
-      props: {},
-    };
-  }
-}
+//     return {
+//       props: { product },
+//     };
+//   } catch (error) {
+//     console.log(error);
+//     return {
+//       props: {},
+//     };
+//   }
+// }

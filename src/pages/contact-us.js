@@ -151,7 +151,7 @@ const ContactUs = () => {
                 <div className="heading-s1 space-mb--20">
                   <h2>{t("contact.contact-us.title")}</h2>
                 </div>
-                <p className="leads">{t("contact.breadcrumb.text")}</p>
+                <p className="leads">{t("contact.contact-us.text")}</p>
                 <div className="field-form">
                   <form method="post">
                     <div className="row">

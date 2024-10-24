@@ -169,13 +169,21 @@ function VanityCustomizer() {
       if (
         counterTopData &&
         counterTopData.selectedCTColor &&
-        (counterTopData.selectedCTColor.price_type === "supreme" ||
-          counterTopData.selectedStorageColor.price_type === "supreme")
+        counterTopData.selectedCTColor.price_type === "supreme"
       ) {
         counterTopPrice = parseFloat(
           tempCartItem.english.countertop_supreme_price ||
             tempCartItem.arabic.countertop_supreme_price
         );
+      }
+
+      if (
+        counterTopData &&
+        counterTopData.selectedCTColor &&
+        counterTopData.selectedCTColor.price_type === "supreme" &&
+        counterTopData.selectedStorageColor &&
+        validArticleNos.includes(tempCartItem.english.storage_article_no)
+      ) {
         storagePrice = parseFloat(
           tempCartItem.english.storage_supreme_price ||
             tempCartItem.arabic.storage_supreme_price
@@ -338,21 +346,21 @@ function VanityCustomizer() {
   };
 
   const handleCounterTopColor = (color) => {
-    setCounterTopData({
-      ...counterTopData,
+    setCounterTopData((prevCounterTopData) => ({
+      ...prevCounterTopData,
       selectedCTColor: color,
-      storageColors:
-        color.price_type === "supreme"
-          ? currentColor.storage_colors.filter(
-              (c) => c.price_type === "supreme"
-            )
-          : currentColor.storage_colors,
+      // storageColors:
+      //   color.price_type === "supreme"
+      //     ? currentColor.storage_colors.filter(
+      //         (c) => c.price_type === "supreme"
+      //       )
+      //     : currentColor.storage_colors,
       selectedStorageColor: validArticleNos.includes(
         tempCartItem.english.storage_article_no
       )
         ? color
-        : "",
-    });
+        : prevCounterTopData?.selectedStorageColor,
+    }));
   };
   return (
     <LayoutOne showFooter={false}>

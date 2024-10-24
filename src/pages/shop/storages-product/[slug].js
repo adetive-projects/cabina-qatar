@@ -25,7 +25,7 @@ const ProductThumbLeft = ({ product }) => {
 
   const router = useRouter();
   const { slug } = router.query;
-  const [allSingleProductData, setAllSingleProductData] = useState(product);
+  const [allSingleProductData, setAllSingleProductData] = useState({});
   const [singleProduct, setSingleProduct] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { i18n } = useTranslation();
@@ -159,55 +159,55 @@ const ProductThumbLeft = ({ product }) => {
 
 export default ProductThumbLeft;
 
-export async function getStaticPaths() {
-  try {
-    const res = await fetch(`${apiUrl}/storages`);
-    const products = await res.json();
-    const englishCountertops = products?.data?.english_storages || [];
-    const paths = englishCountertops.map((product) => ({
-      params: { slug: product?.id?.toString() },
-    }));
+// export async function getStaticPaths() {
+//   try {
+//     const res = await fetch(`${apiUrl}/storages`);
+//     const products = await res.json();
+//     const englishCountertops = products?.data?.english_storages || [];
+//     const paths = englishCountertops.map((product) => ({
+//       params: { slug: product?.id?.toString() },
+//     }));
 
-    return {
-      paths,
-      fallback: false,
-    };
-  } catch (error) {
-    console.error("Error:", error.message);
-    return {
-      paths: [],
-      fallback: false,
-    };
-  }
-}
+//     return {
+//       paths,
+//       fallback: false,
+//     };
+//   } catch (error) {
+//     console.error("Error:", error.message);
+//     return {
+//       paths: [],
+//       fallback: false,
+//     };
+//   }
+// }
 
-export async function getStaticProps({ params }) {
-  try {
-    const res = await fetch(`${apiUrl}/single-storage`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: params.slug,
-      }),
-    });
+// export async function getStaticProps({ params }) {
+//   try {
+//     const res = await fetch(`${apiUrl}/single-storage`, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({
+//         id: params.slug,
+//       }),
+//     });
 
-    const productData = await res.json();
+//     const productData = await res.json();
 
-    if (!productData || !productData.data) {
-      return { notFound: true };
-    }
+//     if (!productData || !productData.data) {
+//       return { notFound: true };
+//     }
 
-    const product = productData.data;
+//     const product = productData.data;
 
-    return {
-      props: { product },
-    };
-  } catch (error) {
-    console.log(error);
-    return {
-      props: {},
-    };
-  }
-}
+//     return {
+//       props: { product },
+//     };
+//   } catch (error) {
+//     console.log(error);
+//     return {
+//       props: {},
+//     };
+//   }
+// }
