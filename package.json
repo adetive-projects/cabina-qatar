@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "server": "pm2 start yarn --name cabina-site -- start -p 4000"
+    "server": "pm2 start npm -- start -p 4000",
+    "server2": "pm2 start yarn --name cabina-site -- start -p 4000"
   },
   "dependencies": {
     "@hasanm95/cogo-toast": "https://github.com/hasanm95/cogo-toast",

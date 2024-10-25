@@ -108,11 +108,10 @@ function VanityCustomizer() {
       setIsLoading({ ...isLoading, countertopLoading: false });
     }
   };
-  console.log(colorsData);
-  // console.log(isLoading)
+
   const fetchStorages = async () => {
     try {
-      setIsLoading({ ...isLoading, storageLoading: true });
+      setIsLoading((prev) => ({ ...prev, storageLoading: true }));
       const response = await fetch(`${apiUrl}/single-countertop-storages`, {
         method: "POST",
         headers: {
@@ -124,15 +123,32 @@ function VanityCustomizer() {
       });
       const data = await response.json();
 
-      setStorageData({
-        ...storageData,
-        selectedStorage: "",
-        storages: data.data.english_storages,
-      });
+      const existingStorageIds = storageData.storages
+        .map((item) => item.storage_id)
+        .sort((a, b) => a - b);
+
+      const upcomingStorageIds = data.data.english_storages
+        .map((item) => item.storage_id)
+        .sort((a, b) => a - b);
+
+      const shouldUpdate =
+        existingStorageIds.length === 0 ||
+        existingStorageIds.length !== upcomingStorageIds.length ||
+        !existingStorageIds.every(
+          (id, index) => id === upcomingStorageIds[index]
+        );
+
+      if (shouldUpdate) {
+        setStorageData({
+          ...storageData,
+          selectedStorage: "",
+          storages: data.data.english_storages,
+        });
+      }
     } catch (error) {
-      console.error("Error:", error.message);
+      console.error("Error fetching storages:", error);
     } finally {
-      setIsLoading({ ...isLoading, storageLoading: false });
+      setIsLoading((prev) => ({ ...prev, storageLoading: false }));
     }
   };
 
