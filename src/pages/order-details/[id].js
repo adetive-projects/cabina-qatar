@@ -104,7 +104,9 @@ const OrderDetails = () => {
                 <p className="mb-1">
                   {t("single-order.text-four.one")}
                   <span className="text-capitalize">
-                    {OrderDetails?.payment_status || "-"}
+                    {OrderDetails?.payment_status == "unpaid"
+                      ? "Pending Payment"
+                      : OrderDetails?.payment_status || "-"}
                   </span>
                 </p>
                 <p className="mb-1">

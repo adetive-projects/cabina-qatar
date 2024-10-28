@@ -234,7 +234,9 @@ const MyAccount = () => {
                                     <td>{order.order_no}</td>
                                     <td>{order.order_date}</td>
                                     <td className="text-capitalize">
-                                      {order.payment_status}
+                                      {order.payment_status == "unpaid"
+                                        ? "Pending Payment"
+                                        : order.payment_status}
                                     </td>
                                     <td className="text-capitalize">
                                       {order.order_status}

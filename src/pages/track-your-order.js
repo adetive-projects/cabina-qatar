@@ -51,30 +51,6 @@ const TrackYourOrder = () => {
     }
   };
 
-  // useEffect(() => {
-  //   const addGoogleTranslate = () => {
-  //     const googleTranslateScript = document.createElement("script");
-  //     googleTranslateScript.type = "text/javascript";
-  //     googleTranslateScript.src =
-  //       "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-  //     document.body.appendChild(googleTranslateScript);
-
-  //     window.googleTranslateElementInit = () => {
-  //       new window.google.translate.TranslateElement(
-  //         {
-  //           pageLanguage: "en",
-  //           includedLanguages: "en,ar",
-  //           layout:
-  //             window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-  //         },
-  //         "google_translate_element"
-  //       );
-  //     };
-  //   };
-
-  //   addGoogleTranslate();
-  // }, []);
-
   return (
     <LayoutOne>
       {/* <div className="flex-grow-1"> */}
@@ -164,7 +140,9 @@ const TrackYourOrder = () => {
                     <p className="mb-1">
                       {t("track.result.point-three")}{" "}
                       <span className="text-capitalize">
-                        {OrderDetails?.payment_status || "-"}
+                        {OrderDetails?.payment_status == "unpaid"
+                          ? "Payment Pending"
+                          : OrderDetails?.payment_status || "-"}
                       </span>
                     </p>
                     <p className="mb-1">
@@ -180,7 +158,9 @@ const TrackYourOrder = () => {
                       </span>
                     </p>
                     <p className="mb-1">
-                      {t("track.result.point-six")} {OrderDetails?.total || "-"}
+                      {t("track.result.point-six")}{" "}
+                      {Number(OrderDetails?.total).toLocaleString("en-US") ||
+                        "-"}
                     </p>
                   </Col>
                 </Row>
