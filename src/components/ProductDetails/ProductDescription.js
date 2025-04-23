@@ -80,9 +80,10 @@ const ProductDescription = ({
         tempCartItem?.english?.countertop_id &&
         tempCartItem?.arabic?.countertop_id
       ) {
-        // FOR EDITING IN VANITY OF SAME SIZE
+        // FOR EDITING IN VANITY OF SAME SIZE & SAME TYPE
         if (
           tempCartItem?.english.countertop_size === product.size &&
+          tempCartItem?.english.countertop_type === product.type &&
           tempCartItem?.isEditing
         ) {
           dispatch(
